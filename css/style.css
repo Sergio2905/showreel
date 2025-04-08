@@ -1404,6 +1404,10 @@ body._lock {
     flex-direction: column;
   }
 
+  .video {
+    cursor: unset;
+  }
+
   .contacts__bg {
     top: unset;
     bottom: 0;
