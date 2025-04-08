@@ -503,7 +503,9 @@ body._lock {
 .video.full {
   position: fixed;
   width: unset;
+  aspect-ratio: unset;
   height: 100%;
+  max-width: 100%;
   top: 0;
   left: 50%;
   transform: translate(-50%, 0);
@@ -1237,10 +1239,6 @@ body._lock {
 @media (max-width: 992px) {
   .works__item {
     flex-direction: column;
-  }
-
-  .video.full {
-    max-width: 100%;
   }
 
   .contacts__bg {

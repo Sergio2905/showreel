@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20250407173513" />
+    <link rel="stylesheet" href="css/style.min.css?_v=20250406154843" />
     <link rel="icon" type="image/ico" href="favicon.ico">
     <title>Showreel</title>
-    <!-- <script src="https://www.youtube.com/iframe_api?_v=20250407173513"></script> -->
-    <script src="https://player.vimeo.com/api/player.js?_v=20250407173513"></script>
+    <!-- <script src="https://www.youtube.com/iframe_api?_v=20250406154843"></script> -->
+    <script src="https://player.vimeo.com/api/player.js?_v=20250406154843"></script>
 </head>
 
 <body>
@@ -67,30 +67,43 @@
 
         <div class="page">
 
-            <div class="contacts">
-                <div class="contacts__bg">
-                    <picture><source srcset="img/contacts/image.webp" type="image/webp"><img src="img/contacts/image.png" alt="Background"></picture>
-                </div>
-                <div class="contacts__container container">
-                    <h1 class="contacts__title">Let's bring your visions</h1>
-                    <div class="contacts__body">
-                        <div class="contacts__form form">
-                            <p class="form__text">
-                                let us know how we can help
-                            </p>
-                            <input type="text" placeholder="NAME" name="user-name">
-                            <input type="text" placeholder="email" name="email">
-                            <textarea placeholder="message" name="message"></textarea>
-                            <button type="submit">leave info</button>
-                        </div>
-                        <div class="contacts__links links">
-                            <p class="links__text">follow us</p>
-                            <a href="#" class="links__item">/ Instagram</a>
-                            <a href="#" class="links__item">/ LinkedIn</a>
-                            <a href="#" class="links__item">/ telegram</a>
-                            <a href="#" class="links__email">kotecuts@gmail.com</a>
-                        </div>
-                    </div>
+            <div class="works">
+                <div class="works__container container">
+                    <h1 class="works__title">my works</h1>
+                    <ul class="works__body">
+                        <li class="works__item">
+                            <div class="works__video video">
+                                <div class="video__poster">
+                                    <img src="https://img.youtube.com/vi/IeWDL2co9R0/maxresdefault.jpg"
+                                        alt="Video Preview" />
+                                </div>
+                                <div class="video__preview">
+                                    <video data-src="/files/video.mp4" src="" type="video/mp4" disablePictureInPicture
+                                        muted playsinline=""></video>
+                                </div>
+                                <div class="video__full">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/IeWDL2co9R0?autohide=1&controls=0&modestbranding=1&showinfo=0&rel=0&fs=0&mute=1&iv_load_policy=3&enablejsapi=1&autoplay=0"
+                                        frameborder="0" allow="autoplay; encrypted-media; picture-in-picture"
+                                        allowfullscreen style="display: none;">
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="works__about">
+                                <h2>COMMERCIAL - PERŁA I</h2>
+                                <p>
+                                    Poza muzyką A$AP Rocky jest ikoną streetwearu i high fashion. Współpracował z
+                                    markami takimi jak Dior, Gucci czy Raf Simons, a jego styl wpłynął na trendy w
+                                    hip-hopowej modzie.
+                                    Żółw żądał źdźbła, ćwierćgrosz łączył świętą gęślą.
+                                </p>
+                                <div class="works__details">
+                                    <div class="works__number">2</div>
+                                    <div class="works__category">COMMERCIAL</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
@@ -136,7 +149,7 @@
 
     
 
-    <script src="js/app.min.js?_v=20250407173513"></script>
+    <script src="js/app.min.js?_v=20250406154843"></script>
 </body>
 
 </html>
