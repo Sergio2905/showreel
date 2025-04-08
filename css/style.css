@@ -705,6 +705,7 @@ body._lock {
 
 .video__full {
   width: 100%;
+  pointer-events: none;
 }
 
 .video__full iframe {
