@@ -381,6 +381,7 @@ body._lock {
   font-weight: 500;
   border: 1px solid var(--white);
   padding: 16px 65px;
+  transition: all 0.5s ease;
 }
 
 .range {
@@ -482,6 +483,62 @@ body._lock {
   margin-top: 64px;
 }
 
+.works__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+  row-gap: 32px;
+}
+
+.works__grid .works__item {
+  flex-direction: column;
+}
+
+.works__grid .works__item:not(:last-child) {
+  border: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.works__grid .works__item:nth-child(1),
+.works__grid .works__item:nth-child(2) {
+  grid-column: span 3;
+}
+
+.works__grid .works__item:nth-child(2) {
+  margin-top: 64px;
+}
+
+.works__grid .works__item:nth-child(1n+3) {
+  grid-column: span 2;
+}
+
+.works__grid .works__item:nth-child(1n+3) .works__details {
+  display: none;
+}
+
+.works__grid .works__video {
+  flex: unset;
+}
+
+.works__grid .works__about {
+  flex: unset;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.works__grid .works__about p {
+  display: none;
+}
+
+.works__grid .works__details {
+  flex: unset;
+  margin-top: 0;
+}
+
 .works__item {
   display: flex;
   gap: 24px;
@@ -551,9 +608,23 @@ body._lock {
   justify-content: center;
 }
 
+.works__more {
+  padding: 16px;
+  color: var(--white);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 500;
+  border: 1px solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 41px;
+  transition: all 0.5s ease;
+}
+
 .video {
   width: 100%;
-  aspect-ratio: 640/360;
   position: relative;
   cursor: none;
   border: 1px solid transparent;
@@ -563,31 +634,26 @@ body._lock {
 
 .video.full {
   position: fixed;
-  aspect-ratio: unset;
-  height: 100%;
   width: 100%;
-  max-width: 100vw;
+  height: var(--app-height);
   top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
+  left: 0;
   z-index: 1000;
   background: var(--black);
   border: 1px solid transparent !important;
+  display: flex;
+  flex-direction: column;
 }
 
 .video.full .video__header {
   display: flex;
 }
 
-.video.full::before {
-  content: "";
-  position: fixed;
-  width: 200vw;
-  height: 100%;
-  transform: translate(-50%, 0);
-  top: 0;
-  left: 0;
-  background: var(--black);
+.video.full .video__full {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .video.active {
@@ -638,22 +704,13 @@ body._lock {
 }
 
 .video__full {
-  position: absolute;
   width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
 }
 
 .video__full iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  pointer-events: none;
+  max-width: 100%;
+  aspect-ratio: 640/360;
 }
 
 .video__cursor {
@@ -1155,6 +1212,10 @@ body._lock {
     margin-top: calc(16px + 4 * (100vw - 320px) / 1054);
   }
 
+  .works__more {
+    margin-top: calc(32px + 9 * (100vw - 320px) / 1054);
+  }
+
   .video:not(.full) .video__controls {
     padding-inline: calc(8px + 8 * (100vw - 320px) / 1054);
     padding-block: calc(4px + 4 * (100vw - 320px) / 1054);
@@ -1306,6 +1367,39 @@ body._lock {
 }
 
 @media (max-width: 992px) {
+  .works__grid {
+    grid-template-columns: 1fr;
+    gap: unset;
+  }
+
+  .works__grid .works__item:not(:last-child) {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(252, 252, 252, 0.24);
+  }
+
+  .works__grid .works__item:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .works__grid .works__item:nth-child(1n+3) .works__details {
+    display: flex;
+  }
+
+  .works__grid .works__about {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: unset;
+  }
+
+  .works__grid .works__about p {
+    display: block;
+  }
+
+  .works__grid .works__details {
+    margin-top: 24px;
+  }
+
   .works__item {
     flex-direction: column;
   }
@@ -1425,12 +1519,22 @@ body._lock {
     fill: var(--yellow);
   }
 
+  .main__btn:hover {
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
+  }
+
   .works__item:hover .works__about h2,
   .works__item:hover .works__about p {
     color: var(--yellow);
   }
 
   .works__item:hover .works__video {
+    border: 1px solid var(--yellow);
+  }
+
+  .works__more:hover {
+    color: var(--yellow);
     border: 1px solid var(--yellow);
   }
 
