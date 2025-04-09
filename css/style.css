@@ -127,6 +127,8 @@ body._lock {
   opacity: 0.42;
   animation: noise 0.15s linear infinite;
   mix-blend-mode: overlay;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .container {
@@ -268,6 +270,22 @@ body._lock {
   scrollbar-width: none;
 }
 
+.menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 105%;
+  height: 100%;
+  background: url("../img/noise.webp") repeat;
+  opacity: 0.1;
+  animation: noise 0.13s linear infinite;
+  mix-blend-mode: overlay;
+  z-index: 10;
+  pointer-events: none;
+}
+
 .menu::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -279,19 +297,22 @@ body._lock {
 
 .menu__body {
   flex: 1 1 auto;
+  position: relative;
+  z-index: 20;
 }
 
 .menu__list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 64px;
 }
 
 .menu__link {
   font-family: var(--gestura);
   color: var(--white);
   font-size: 3.5rem;
+  line-height: 0.8;
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.5s ease;
@@ -372,6 +393,8 @@ body._lock {
   line-height: 0.8;
   text-transform: uppercase;
   font-weight: inherit;
+  position: relative;
+  z-index: 20;
 }
 
 .main__btn {
@@ -383,6 +406,7 @@ body._lock {
   border: 1px solid var(--white);
   padding: 16px 65px;
   transition: all 0.5s ease;
+  background: rgba(16, 15, 15, 0.64);
 }
 
 .main__socials {
@@ -403,6 +427,8 @@ body._lock {
 .main__social svg {
   width: 100%;
   height: 100%;
+  fill: #F4F4F5;
+  transition: all 0.5s ease;
 }
 
 .range {
@@ -487,10 +513,33 @@ body._lock {
   border-radius: 3px;
 }
 
+.up {
+  position: fixed;
+  bottom: 48px;
+  right: 48px;
+  width: 72px;
+  height: 72px;
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+
+.up.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.up svg {
+  width: 100%;
+  height: 100%;
+}
+
 .works {
   position: relative;
   padding-top: 132px;
   padding-bottom: 100px;
+  z-index: 10;
 }
 
 .works__title {
@@ -498,6 +547,7 @@ body._lock {
   font-size: 4rem;
   text-transform: uppercase;
   text-align: center;
+  font-weight: inherit;
 }
 
 .works__body {
@@ -874,6 +924,7 @@ body._lock {
   position: relative;
   padding-top: 132px;
   padding-bottom: 100px;
+  z-index: 20;
 }
 
 .about__title {
@@ -881,13 +932,14 @@ body._lock {
   font-size: 4rem;
   text-transform: uppercase;
   text-align: center;
+  font-weight: inherit;
 }
 
 .about__body {
   margin-top: 72px;
   display: grid;
   grid-template-columns: 3.5fr 5fr;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: minmax(0, auto) minmax(0, auto) auto;
   -moz-column-gap: 80px;
        column-gap: 80px;
 }
@@ -931,6 +983,7 @@ body._lock {
 .numbers {
   padding-bottom: 100px;
   position: relative;
+  z-index: 20;
 }
 
 .numbers__title {
@@ -1000,6 +1053,7 @@ body._lock {
   font-size: 3.75rem;
   text-transform: uppercase;
   text-align: center;
+  font-weight: inherit;
 }
 
 .contacts__body {
@@ -1011,7 +1065,7 @@ body._lock {
 .form {
   flex: 1 1 55%;
   background: rgba(252, 252, 252, 0.02);
-  border: 1px solid rgba(252, 252, 252, 0.24);
+  border: 1.5px solid rgba(252, 252, 252, 0.24);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   padding: 32px 16px;
@@ -1061,6 +1115,16 @@ body._lock {
   text-transform: uppercase;
   padding: 16px;
   transition: all 0.5s ease;
+  background: var(--black);
+  pointer-events: none;
+  border: 1px solid rgba(252, 252, 252, 0.24);
+  color: rgba(252, 252, 252, 0.24);
+}
+
+.form button.active {
+  pointer-events: all;
+  border: 1px solid #FCFCFC;
+  color: #FCFCFC;
 }
 
 .form__text {
@@ -1073,7 +1137,7 @@ body._lock {
 
 .links {
   flex: 1 1 45%;
-  border: 1px solid rgba(252, 252, 252, 0.24);
+  border: 1.5px solid rgba(252, 252, 252, 0.24);
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -1113,6 +1177,7 @@ body._lock {
 .footer {
   position: relative;
   background: var(--black);
+  z-index: 20;
 }
 
 .footer__body {
@@ -1162,12 +1227,33 @@ body._lock {
   border-top: 1px solid rgba(252, 252, 252, 0.24);
 }
 
+.form-footer.error .form-footer__title span {
+  display: block;
+}
+
+.form-footer.error .form-footer__block button {
+  background: rgba(252, 252, 252, 0.08);
+  color: rgba(236, 209, 170, 0.32);
+  pointer-events: none;
+}
+
 .form-footer__title {
   font-size: 1.125rem;
   color: #FCFCFC;
   opacity: 0.64;
   margin-bottom: 12px;
   text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.form-footer__title span {
+  color: var(--red);
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  display: none;
 }
 
 .form-footer__block {
@@ -1180,12 +1266,21 @@ body._lock {
 .form-footer__block input {
   flex: 1 1 auto;
   font-size: 1.125rem;
-  color: #A3A3A3;
+  font-weight: inherit;
+  color: var(--white);
   padding: 10px 10px;
   background: none;
   border: none;
   width: 100%;
   min-width: 200px;
+}
+
+.form-footer__block input::-moz-placeholder {
+  color: #A3A3A3;
+}
+
+.form-footer__block input::placeholder {
+  color: #A3A3A3;
 }
 
 .form-footer__block button {
@@ -1584,6 +1679,10 @@ body._lock {
   .main__btn:hover {
     color: var(--yellow);
     border: 1px solid var(--yellow);
+  }
+
+  .main__social:hover svg {
+    fill: var(--yellow);
   }
 
   .works__item:hover .works__about h2,
