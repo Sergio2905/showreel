@@ -184,10 +184,10 @@ body._lock {
 }
 
 .header__text {
-  font-size: 1.25rem;
   text-transform: uppercase;
   letter-spacing: 32%;
   text-align: center;
+  font-size: calc(0.875rem + 6 * (100vw - 20rem) / 1054);
 }
 
 .header__menu-icon {
@@ -1309,10 +1309,6 @@ body._lock {
 
   .header__logo img {
     max-height: calc(32px + 8 * (100vw - 320px) / 1054);
-  }
-
-  .header__text {
-    font-size: calc(0.875rem + 6 * (100vw - 20rem) / 1054);
   }
 
   .menu__link {
