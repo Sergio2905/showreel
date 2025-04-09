@@ -130,10 +130,9 @@ body._lock {
 }
 
 .container {
-  max-width: 1374px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 48px;
 }
 
 .page {
@@ -259,8 +258,9 @@ body._lock {
   display: flex;
   flex-direction: column;
   padding: 100px 64px 64px;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  background: rgba(16, 15, 15, 0.42);
+  -webkit-backdrop-filter: blur(42px);
+          backdrop-filter: blur(42px);
   transition: all 0.5s ease;
   transform: translate(100%, 0);
   z-index: 100;
@@ -371,6 +371,7 @@ body._lock {
   font-size: 11.25rem;
   line-height: 0.8;
   text-transform: uppercase;
+  font-weight: inherit;
 }
 
 .main__btn {
@@ -382,6 +383,26 @@ body._lock {
   border: 1px solid var(--white);
   padding: 16px 65px;
   transition: all 0.5s ease;
+}
+
+.main__socials {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.main__social {
+  width: 48px;
+  height: 48px;
+}
+
+.main__social svg {
+  width: 100%;
+  height: 100%;
 }
 
 .range {
@@ -1172,10 +1193,17 @@ body._lock {
   width: 100%;
   font-weight: 500;
   text-transform: uppercase;
-  color: rgba(236, 209, 170, 0.32);
-  background: rgba(252, 252, 252, 0.08);
+  background: #ECD1AA;
+  color: var(--black);
   padding: 14px;
   transition: all 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.form-footer__block button.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 @media (max-width: 1374px) {
@@ -1205,6 +1233,15 @@ body._lock {
 
   .main__title {
     font-size: calc(3rem + 132 * (100vw - 20rem) / 1054);
+  }
+
+  .main__socials {
+    gap: calc(8px + 8 * (100vw - 320px) / 1054);
+  }
+
+  .main__social {
+    width: calc(32px + 16 * (100vw - 320px) / 1054);
+    height: calc(32px + 16 * (100vw - 320px) / 1054);
   }
 
   .works {
@@ -1384,6 +1421,10 @@ body._lock {
 }
 
 @media (max-width: 992px) {
+  .container {
+    padding: 0 15px;
+  }
+
   .works__grid {
     grid-template-columns: 1fr;
     gap: unset;
@@ -1586,7 +1627,7 @@ body._lock {
   }
 
   .form-footer__block button:hover {
-    background: #ECD1AA;
-    color: var(--black);
+    background: rgba(252, 252, 252, 0.08);
+    color: rgba(236, 209, 170, 0.32);
   }
 }
