@@ -98,6 +98,7 @@ body {
   min-width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
+  font-size: 1.09vw;
 }
 
 body._lock {
@@ -178,22 +179,23 @@ body._lock {
 }
 
 .header__logo img {
-  max-height: 40px;
+  max-height: 2.5em;
   height: 100%;
   width: auto;
 }
 
 .header__text {
-  font-size: 1.25rem;
+  font-size: 1.25em;
+  font-size: 100%;
   text-transform: uppercase;
   letter-spacing: 32%;
   text-align: center;
 }
 
 .header__menu-icon {
-  width: 24px;
-  min-width: 24px;
-  height: 15px;
+  width: 1.5em;
+  min-width: 1.5em;
+  height: 0.9375em;
   display: block;
   z-index: 101;
   position: relative;
@@ -206,7 +208,7 @@ body._lock {
   left: 0;
   transform: translate(0, -50%);
   width: 100%;
-  height: 2px;
+  height: 0.125em;
   background: var(--white);
   transition: opacity 0s ease 0.1s, background 0.5s ease;
 }
@@ -217,7 +219,7 @@ body._lock {
   left: 0;
   top: 0%;
   transform: translate(0, -50%);
-  height: 2px;
+  height: 0.125em;
   width: 100%;
   background: var(--white);
   transition: transform 0.2s ease, top 0.2s ease 0.2s, background 0.5s ease;
@@ -229,7 +231,7 @@ body._lock {
   left: 0;
   top: 98%;
   transform: translate(0, -50%);
-  height: 2px;
+  height: 0.125em;
   width: 100%;
   background: var(--white);
   transition: transform 0.2s ease, top 0.2s ease 0.2s, width 0s ease 0.2s, background 0.5s ease;
@@ -259,7 +261,7 @@ body._lock {
   height: var(--app-height);
   display: flex;
   flex-direction: column;
-  padding: 100px 64px 64px;
+  padding: 6.25em 4em 4em;
   background: rgba(16, 15, 15, 0.42);
   -webkit-backdrop-filter: blur(42px);
           backdrop-filter: blur(42px);
@@ -305,13 +307,13 @@ body._lock {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 4em;
 }
 
 .menu__link {
   font-family: var(--gestura);
   color: var(--white);
-  font-size: 3.5rem;
+  font-size: 3.5em;
   line-height: 0.8;
   text-transform: uppercase;
   text-decoration: none;
@@ -321,19 +323,19 @@ body._lock {
 .socials {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 64px;
+  gap: 1em;
+  margin-top: 4em;
 }
 
 .socials__text {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   text-transform: uppercase;
   max-width: 320px;
 }
 
 .socials__link {
-  width: 48px;
-  height: 48px;
+  width: 3em;
+  height: 3em;
 }
 
 .socials__link svg {
@@ -378,18 +380,18 @@ body._lock {
 .main__body {
   flex: 1 1 auto;
   position: relative;
-  padding: 75px 0;
+  padding: 4.6875em 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 1em;
 }
 
 .main__title {
   text-align: center;
   font-family: var(--gestura);
-  font-size: 11.25rem;
+  font-size: 11.25em;
   line-height: 0.8;
   text-transform: uppercase;
   font-weight: inherit;
@@ -401,10 +403,10 @@ body._lock {
   color: var(--white);
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1.125rem;
+  font-size: 1.125em;
   font-weight: 500;
   border: 1px solid var(--white);
-  padding: 16px 65px;
+  padding: 1em 4.0625em;
   transition: all 0.5s ease;
   background: rgba(16, 15, 15, 0.64);
 }
@@ -412,7 +414,7 @@ body._lock {
 .main__socials {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1em;
   position: absolute;
   right: 0;
   top: 50%;
@@ -420,8 +422,8 @@ body._lock {
 }
 
 .main__social {
-  width: 48px;
-  height: 48px;
+  width: 3em;
+  height: 3em;
 }
 
 .main__social svg {
@@ -544,7 +546,7 @@ body._lock {
 
 .works__title {
   font-family: var(--gestura);
-  font-size: 4rem;
+  font-size: 4em;
   text-transform: uppercase;
   text-align: center;
   font-weight: inherit;
@@ -1307,36 +1309,28 @@ body._lock {
   }
 
   .header__logo img {
-    max-height: calc(32px + 8 * (100vw - 320px) / 1054);
-  }
-
-  .header__text {
-    font-size: calc(0.875rem + 6 * (100vw - 20rem) / 1054);
+    max-height: calc(2em + 8 * (100vw - 20em) / 1054);
   }
 
   .menu__link {
-    font-size: calc(2rem + 24 * (100vw - 20rem) / 1054);
+    font-size: calc(2em + 24 * (100vw - 20em) / 1054);
   }
 
   .socials__text {
-    font-size: calc(1.25rem + 4 * (100vw - 20rem) / 1054);
+    font-size: calc(1.25em + 4 * (100vw - 20em) / 1054);
   }
 
   .main__body {
-    padding-bottom: calc(36px + 39 * (100vw - 320px) / 1054);
-  }
-
-  .main__title {
-    font-size: calc(3rem + 132 * (100vw - 20rem) / 1054);
+    padding-bottom: calc(2.25em + 39 * (100vw - 20em) / 1054);
   }
 
   .main__socials {
-    gap: calc(8px + 8 * (100vw - 320px) / 1054);
+    gap: calc(0.5em + 8 * (100vw - 20em) / 1054);
   }
 
   .main__social {
-    width: calc(32px + 16 * (100vw - 320px) / 1054);
-    height: calc(32px + 16 * (100vw - 320px) / 1054);
+    width: calc(2em + 16 * (100vw - 20em) / 1054);
+    height: calc(2em + 16 * (100vw - 20em) / 1054);
   }
 
   .works {
@@ -1345,7 +1339,7 @@ body._lock {
   }
 
   .works__title {
-    font-size: calc(2.25rem + 28 * (100vw - 20rem) / 1054);
+    font-size: calc(2.25em + 28 * (100vw - 20em) / 1054);
   }
 
   .works__body {
@@ -1657,7 +1651,7 @@ body._lock {
 
   .menu {
     width: 100vw;
-    padding: 100px 32px 32px;
+    padding: 6.25em 2em 2em;
   }
 }
 
