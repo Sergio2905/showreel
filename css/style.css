@@ -186,7 +186,7 @@ body._lock {
 .header__text {
   font-size: 1.25em;
   text-transform: uppercase;
-  letter-spacing: 32%;
+  letter-spacing: 0.3125em;
   text-align: center;
 }
 
@@ -259,7 +259,7 @@ body._lock {
   height: var(--app-height);
   display: flex;
   flex-direction: column;
-  padding: 6.25em 4em 4em;
+  padding: 7.875em 13.125em 4em 4em;
   background: rgba(16, 15, 15, 0.42);
   -webkit-backdrop-filter: blur(42px);
           backdrop-filter: blur(42px);
@@ -612,6 +612,8 @@ body._lock {
 .works__item {
   display: flex;
   gap: 1.5em;
+  position: relative;
+  z-index: 20;
 }
 
 .works__item:not(:last-child) {
@@ -954,6 +956,7 @@ body._lock {
 }
 
 .about__intro {
+  margin-top: 25px;
   font-size: 1.5em;
   color: #A3A3A3;
   text-transform: uppercase;
@@ -980,7 +983,7 @@ body._lock {
 }
 
 .numbers {
-  padding-bottom: 6.25em;
+  padding-bottom: 8.75em;
   position: relative;
   z-index: 20;
 }
@@ -1062,7 +1065,7 @@ body._lock {
 }
 
 .form {
-  flex: 1 1 55%;
+  flex: 1 1 60%;
   background: rgba(252, 252, 252, 0.02);
   border: 1.5px solid rgba(252, 252, 252, 0.24);
   -webkit-backdrop-filter: blur(10px);
@@ -1135,7 +1138,7 @@ body._lock {
 }
 
 .links {
-  flex: 1 1 45%;
+  flex: 1 1 40%;
   border: 1.5px solid rgba(252, 252, 252, 0.24);
   padding: 1.5em;
   display: flex;
@@ -1159,6 +1162,11 @@ body._lock {
   transition: all 0.5s ease;
 }
 
+.links__item::before {
+  content: "/";
+  margin-right: 0.75em;
+}
+
 .links__item:not(:first-child) {
   margin-top: 1.5em;
 }
@@ -1171,6 +1179,8 @@ body._lock {
   transition: all 0.5s ease;
   text-transform: uppercase;
   margin-top: 2.125em;
+  letter-spacing: 1px;
+  word-break: break-all;
 }
 
 .footer {
@@ -1206,7 +1216,8 @@ body._lock {
   display: inline-block;
   margin-top: 62px;
   font-family: var(--gestura);
-  font-size: 2.625rem;
+  font-size: 2.5em;
+  letter-spacing: 1px;
   text-transform: uppercase;
   transition: all 0.5s ease;
   color: var(--white);
@@ -1314,7 +1325,7 @@ body._lock {
   }
 
   .menu__link {
-    font-size: calc(2rem + 24 * (100vw - 20rem) / 1054);
+    font-size: calc(2.875rem + 10 * (100vw - 20rem) / 1054);
   }
 
   .socials__text {
@@ -1427,7 +1438,7 @@ body._lock {
   }
 
   .numbers {
-    padding-bottom: calc(65px + 35 * (100vw - 320px) / 1054);
+    padding-bottom: calc(100px + 40 * (100vw - 320px) / 1054);
   }
 
   .numbers__title {
@@ -1487,7 +1498,7 @@ body._lock {
   }
 
   .links__email {
-    font-size: calc(1.25rem + 16 * (100vw - 20rem) / 1054);
+    font-size: calc(1.375rem + 14 * (100vw - 20rem) / 1054);
     margin-top: calc(32px + 62 * (100vw - 320px) / 1054);
   }
 
@@ -1502,7 +1513,7 @@ body._lock {
   }
 
   .footer__link {
-    font-size: calc(1.5rem + 18 * (100vw - 20rem) / 1054);
+    font-size: calc(1.375rem + 16 * (100vw - 20rem) / 1054);
   }
 
   .footer__rights {
@@ -1530,11 +1541,11 @@ body._lock {
   }
 
   .menu {
-    padding: 100px 64px 64px;
+    padding: 126px 140px 64px 64px;
   }
 
   .menu__list {
-    gap: calc(1.5rem + 40 * (100vw - 20rem) / 1054);
+    gap: calc(2.625rem + 22 * (100vw - 20rem) / 1054);
   }
 
   .socials__text {
@@ -1736,6 +1747,7 @@ body._lock {
 
   .works__item {
     flex-direction: column;
+    gap: 12px;
   }
 
   .video {
@@ -1763,6 +1775,13 @@ body._lock {
     flex: 1 1 100%;
     max-width: unset;
     text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .socials__text span {
+    display: block;
+    max-width: calc(260px + 20 * (100vw - 320px) / 1054);
   }
 
   .about__body {
@@ -1779,6 +1798,7 @@ body._lock {
 
   .about__intro {
     order: 1;
+    margin-top: 0;
   }
 
   .about__name {
@@ -1827,18 +1847,37 @@ body._lock {
   }
 
   .form-footer__title {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 }
 
 @media (max-width: 576px) {
   .header__text {
-    letter-spacing: 12%;
+    letter-spacing: 2px;
   }
 
   .menu {
     width: 100vw;
-    padding: 100px 32px 32px;
+    padding: 126px 32px 32px;
+  }
+
+  .main__socials {
+    display: none;
+  }
+
+  .contacts__title {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .links__text {
+    margin-bottom: 0;
+  }
+
+  .links__email {
+    margin-top: 32px;
   }
 }
 
